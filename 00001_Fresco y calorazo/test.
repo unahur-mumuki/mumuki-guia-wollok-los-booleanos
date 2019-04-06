@@ -1,0 +1,17 @@
+test "fresco" {
+  sanRafael.cambiarTemperatura(3)
+  assert.equals(true, sanRafael.estaFresco())
+  assert.equals(false, sanRafael.haceCalorazo())
+}
+
+test "templado" {
+  sanRafael.cambiarTemperatura(23)
+  assert.equals(false, sanRafael.estaFresco())
+  assert.equals(false, sanRafael.haceCalorazo())
+}
+
+test "que calor" {
+  sanRafael.cambiarTemperatura(43)
+  assert.equals(false, sanRafael.estaFresco())
+  assert.equals(true, sanRafael.haceCalorazo())
+}
