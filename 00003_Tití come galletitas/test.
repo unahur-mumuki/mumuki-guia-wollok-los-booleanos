@@ -1,0 +1,48 @@
+test "empachado comiendo poco" {
+  titi.comerUnPaqueteDeGalletitas()
+  assert.equals(false, titi.estaEmpachado())
+  titi.comerUnPaqueteDeGalletitas()
+  assert.equals(true, titi.estaEmpachado())
+  titi.hacerLaDigestion()
+  assert.equals(false, titi.estaEmpachado())
+}
+
+test "empachado comiendo mucho" {
+  titi.comerUnPaqueteDeGalletitas()
+  titi.comerUnPaqueteDeGalletitas()
+  titi.comerUnPaqueteDeGalletitas()
+  assert.equals(true, titi.estaEmpachado())
+  titi.hacerLaDigestion()
+  titi.hacerLaDigestion()
+  assert.equals(true, titi.estaEmpachado())
+  titi.hacerLaDigestion()
+  assert.equals(true, titi.estaEmpachado())
+  titi.hacerLaDigestion()
+  assert.equals(false, titi.estaEmpachado())
+  titi.comerUnaGalletita()
+  assert.equals(false, titi.estaEmpachado())
+}
+
+test "anda con hambre, comiendo poco" {
+  titi.comerUnaGalletita()
+  titi.comerUnaGalletita()
+  assert.equals(true, titi.andaConHambre())
+  titi.comerUnaGalletita()
+  titi.comerUnaGalletita()
+  assert.equals(false, titi.andaConHambre())
+  titi.comerUnaGalletita()
+  titi.comerUnaGalletita()
+  titi.hacerLaDigestion()
+  assert.equals(true, titi.andaConHambre())
+}
+
+test "anda con hambre, comiendo mucho" {
+  titi.comerUnPaqueteDeGalletitas()
+  assert.equals(false, titi.andaConHambre())
+  titi.hacerLaDigestion()
+  assert.equals(false, titi.andaConHambre())
+  titi.hacerLaDigestion()
+  assert.equals(true, titi.andaConHambre())
+  titi.comerUnaGalletita()
+  assert.equals(false, titi.andaConHambre())
+}
