@@ -1,0 +1,21 @@
+test "picante" {
+  sanRafael.saleElSol()
+  sanRafael.cambiarTemperatura(40)
+  assert.equals(true, sanRafael.estaPicante())
+  sanRafael.cambiarTemperatura(20)
+  assert.equals(false, sanRafael.estaPicante())
+  sanRafael.seEscondeElSol()
+  sanRafael.cambiarTemperatura(40)
+  assert.equals(false, sanRafael.estaPicante())
+}
+
+test "pesado" {
+  sanRafael.saleElSol()
+  sanRafael.cambiarTemperatura(40)
+  assert.equals(false, sanRafael.estaPesado())
+  sanRafael.cambiarTemperatura(20)
+  assert.equals(false, sanRafael.estaPesado())
+  sanRafael.seEscondeElSol()
+  sanRafael.cambiarTemperatura(40)
+  assert.equals(true, sanRafael.estaPesado())
+}
