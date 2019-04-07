@@ -32,13 +32,15 @@ method esDificilDeMover() {
 }
 ```
 
-Analicemos dos casos:
+Este método devuelve un valor booleano. Pero ya vimos que la expresión `peso > 50`, que es una comparación, también devuelve un valor booleano. Vamos a usar esto para llegar a una forma más corta para el método `esDificilDeMover()`.
+
+Para esto, analicemos dos casos:
 
 - Imaginemos que el peso del objeto es `83`. En este caso, el resultado de la expresión `peso > 50` es `true` ... que es exactamente lo que queremos devolver. 
 - - Parecido si el peso es, ponele, `21`: el resultado de `peso > 50` es `false`, otra vez coincide con lo que queremos que devuelva `esDificilDeMover()`.
 
 **Entonces**  
-lo que queremos que devuelva es, *exactamente*, el resultado de `peso > 50`. Por eso al Wollok IDE no le gusta que armes el método con un `if`, te pide que lo hagas correctamente:
+lo que queremos que devuelva es, *exactamente*, el resultado de `peso > 50`. Por eso al Wollok IDE no le gusta que armes el método con un `if`, te pide que lo hagas en forma más concisa y elegante:
 
 ```{wollok}
 method esDificilDeMover() {
