@@ -1,0 +1,20 @@
+test "felicidad de silvestre" {
+  silvestre.cazarRaton()
+  assert.equals(true, silvestre.estaFeliz())
+  silvestre.esRetado()
+  silvestre.esRetado()
+  assert.equals(false, silvestre.estaFeliz())
+  silvestre.cazarRaton()
+  assert.equals(false, silvestre.estaFeliz())
+  silvestre.cazarRaton()
+  assert.equals(true, silvestre.estaFeliz())
+}
+
+test "felicidad de jesica" {
+  silvestre.cazarRaton()
+  // silvestre está feliz, pepita no
+  jesica.tuMascotaEs(silvestre)
+  assert.equals(true, jesica.estaFeliz())
+  jesica.tuMascotaEs(pepita)
+  assert.equals(false, jesica.estaFeliz())
+}
