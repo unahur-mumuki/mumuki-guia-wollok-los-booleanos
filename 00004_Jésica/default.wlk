@@ -29,8 +29,8 @@ object jesica {
   }
 
   method estaTodoBien() {
-    // para jésica está todo bien si está feliz y, además,
-    // va bien en los estudios
+    // para jésica está todo bien si está feliz 
+    // y, además, va bien en los estudios
     // acá usar self
   }
 }
